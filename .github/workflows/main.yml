@@ -1,0 +1,14 @@
+name: Test Python
+
+on:
+  workflow_dispatch:  # pozwala uruchomić ręcznie
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: python bot.py
